@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Footer } from "@/components";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Footer, Header } from "@/components";
+import { EntityProvider } from "@/context/entity";
+import { EntitiesEnum } from "@/types/entities";
 
 export const metadata: Metadata = {
   title: "Projeto Hanna - SeCoT XVII",
@@ -30,12 +21,15 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`flex flex-col items-center justify-content-center antialiased`}
       >
-        <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-          {children}
-          <Footer />
-        </div>
+        <EntityProvider>
+          <div className="h-dvh max-w-250 w-full pl-10 pr-10 flex flex-col">
+            <Header />
+            <div className="flex-1 bg-gray-50 p-10">{children}</div>
+            <Footer />
+          </div>
+        </EntityProvider>
       </body>
     </html>
   );

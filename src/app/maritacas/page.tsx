@@ -1,3 +1,10 @@
+import { Table } from "@/components";
+
 export default function Maritacas() {
-  return <div>oi</div>;
+  return (
+    <>
+      <p>Confira os jogos da Maritacas GameDev!</p>
+      <Table />
+    </>
+  );
 }
