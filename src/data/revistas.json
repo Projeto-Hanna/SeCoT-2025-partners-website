@@ -1,0 +1,15 @@
+{
+  "headers": ["Capa", "Título", "Download"],
+  "data": [
+    [
+      "https://example.com/capa1.jpg",
+      "Revista Exemplo 1",
+      "https://example.com/download1.pdf"
+    ],
+    [
+      "https://example.com/capa2.jpg",
+      "Revista Exemplo 2",
+      "https://example.com/download2.pdf"
+    ]
+  ]
+}
