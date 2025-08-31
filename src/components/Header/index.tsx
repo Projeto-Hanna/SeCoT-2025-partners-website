@@ -1,9 +1,7 @@
 "use client"
 
-import { useContext } from "react"
-
-import { EntityContext } from "@/context/entity"
 import { EntitiesEnum } from "@/types/entities"
+import { useEntity } from "@/utils/entity"
 import { twcn } from "@/utils/style"
 import Image from "next/image"
 import Link from "next/link"
@@ -12,7 +10,7 @@ import { Navbar, NavItem, NavLogo } from "retro-react"
 type EntityHeaderData = {
   href: string
   imageSrc: string
-  bg: string
+  color: string
   links: {
     label: string
     href: string
@@ -22,8 +20,8 @@ type EntityHeaderData = {
 const entities: Record<EntitiesEnum, EntityHeaderData> = {
   secot: {
     href: "/",
-    imageSrc: "/entities/logo-secot-horizontal.png",
-    bg: "bg-red-600",
+    imageSrc: "/entities/secot/logo-secot-horizontal.png",
+    color: "red-600",
     links: [
       { label: "Projetos", href: "/projects" },
       { label: "Sobre", href: "/about" },
@@ -31,8 +29,8 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
   },
   hackoonspace: {
     href: "/hackoonspace",
-    imageSrc: "/entities/logo-hackoonspace.png",
-    bg: "bg-indigo-900",
+    imageSrc: "/entities/hackoonspace/logo-hackoonspace.png",
+    color: "indigo-900",
     links: [
       { label: "Revistas", href: "/hackoonspace/revistas" },
       { label: "Inscrições", href: "/hackoonspace/inscrições" },
@@ -40,41 +38,37 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
   },
   maritacas: {
     href: "/maritacas",
-    imageSrc: "/entities/logo-secot-horizontal.png",
-    bg: "bg-green-600",
+    imageSrc: "/entities/maritacas/logo-maritacas.png",
+    color: "green-600",
     links: [
-      { label: "Projetos", href: "/maritacas/projects" },
-      { label: "Sobre", href: "/maritacas/about" },
+      { label: "Jogos", href: "/maritacas/jogos" },
+      { label: "Itch.io", href: "https://maritacasgamedev.itch.io/" },
     ],
   },
   hanna: {
     href: "/hanna",
-    imageSrc: "/entities/logo-secot-horizontal.png",
-    bg: "bg-rose-900",
+    imageSrc: "/entities/hanna/logo-hanna.png",
+    color: "rose-900",
     links: [
-      { label: "Projetos", href: "/hanna/projects" },
-      { label: "Sobre", href: "/hanna/about" },
+      { label: "Projetos", href: "/hanna/projetos" },
+      { label: "Sobre", href: "/hanna/sobre" },
     ],
   },
 }
 
 export const Header = () => {
-  const context = useContext(EntityContext)
-
-  const entity = entities[context?.entity ?? EntitiesEnum.SECOT]
-
-  if (!entity) return null
+  const entity = useEntity<EntityHeaderData>(entities)
 
   return (
     <Navbar
       variant="default"
-      style={twcn(`h-20 w-full flex items-center ${entity.bg}`)}
+      style={twcn(`h-20 w-full flex items-center bg-${entity.color}`)}
     >
       <NavLogo>
         <Link href={entity.href}>
           <Image
             src={entity.imageSrc}
-            alt="Logo da SeCoT branca"
+            alt="Logo da entidade"
             height={80}
             width={200}
             className="h-20 w-auto p-2"
@@ -82,16 +76,12 @@ export const Header = () => {
           />
         </Link>
       </NavLogo>
-      <NavItem style={twcn("text-indigo-900 font-bold")}>
-        <Link href="/" onClick={function noRefCheck() {}}>
-          Home
-        </Link>
+      <NavItem style={twcn(`text-${entity.color} font-bold`)}>
+        <Link href="/">Home</Link>
       </NavItem>
       {entity.links.map((link, i) => (
-        <NavItem style={twcn("text-indigo-900 font-bold")} key={i}>
-          <Link href={link.href} onClick={function noRefCheck() {}}>
-            {link.label}
-          </Link>
+        <NavItem style={twcn(`text-${entity.color} font-bold`)} key={i}>
+          <Link href={link.href}>{link.label}</Link>
         </NavItem>
       ))}
     </Navbar>
