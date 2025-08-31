@@ -9,9 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@tanstack/react-table": "^8.21.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
     "next": "15.4.6",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "retro-react": "^1.4.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwind-to-style": "^2.8.8",
+    "tailwind-variants": "^3.1.0",
+    "twin.macro": "^3.4.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

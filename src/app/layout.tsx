@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Footer, Header } from "@/components";
-import { EntityProvider } from "@/context/entity";
-import { EntitiesEnum } from "@/types/entities";
+import { MainWrapper } from "@/components/MainWrapper"
+import { EntityProvider } from "@/context/entity"
+import type { Metadata } from "next"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Projeto Hanna - SeCoT XVII",
@@ -11,12 +10,12 @@ export const metadata: Metadata = {
   authors: {
     name: "Projeto Hanna",
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="pt-br">
@@ -24,13 +23,9 @@ export default function RootLayout({
         className={`flex flex-col items-center justify-content-center antialiased`}
       >
         <EntityProvider>
-          <div className="h-dvh max-w-250 w-full pl-10 pr-10 flex flex-col">
-            <Header />
-            <div className="flex-1 bg-gray-50 p-10">{children}</div>
-            <Footer />
-          </div>
+          <MainWrapper>{children}</MainWrapper>
         </EntityProvider>
       </body>
     </html>
-  );
+  )
 }
