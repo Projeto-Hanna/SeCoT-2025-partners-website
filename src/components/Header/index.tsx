@@ -52,7 +52,7 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
     imageSrc: "/entities/hanna/logo-hanna.png",
     color: "rose-900",
     links: [
-      { label: "Projetos", href: "/hanna/projetos" },
+      { label: "Links", href: "https://linktr.ee/projeto_hanna" },
       { label: "Sobre", href: "https://www.projetohanna.com/", newTab: true },
     ],
   },

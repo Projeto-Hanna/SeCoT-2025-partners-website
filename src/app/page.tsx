@@ -44,7 +44,7 @@ export default function Home() {
           <Text sx={twcn("text-center font-bold mb-4")}>HackoonSpace</Text>
         </Link>
 
-        <Link href="/hanna">
+        <Link href="https://linktr.ee/projeto_hanna">
           <Image
             className="h-auto w-auto hover:opacity-75 pointer jump-element"
             src="/entities/hanna/logo-hanna.png"
