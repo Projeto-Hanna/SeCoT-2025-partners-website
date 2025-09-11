@@ -16,6 +16,15 @@ img {
   display: inline;
 }
 
+.jump-element {
+  will-change: transform; 
+  transition: transform 0.2s ease-out;
+}
+
+.jump-element:hover {
+  transform: translateY(-10px);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

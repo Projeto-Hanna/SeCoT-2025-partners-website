@@ -17,7 +17,7 @@ export const revistaColumns: ColumnDef<Revista>[] = [
         alt={row.original.titulo}
         width={80}
         height={112}
-        className="object-cover shadow-sm"
+        className="object-cover shadow-sm h-auto w-auto"
       />
     ),
   },
