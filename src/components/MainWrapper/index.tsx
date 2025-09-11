@@ -63,27 +63,27 @@ export function MainWrapper({ children }: MainWrapperProps) {
 
   return (
     <>
-      <div className="fixed inset-0 flex">
-        <div className="flex-1 h-full relative">
+      <div className="fixed inset-0 flex justify-center">
+        {/* <div className="flex-1 relative">
           <div
             className="absolute w-[300px] h-full bg-right bg-no-repeat bg-contain"
             style={{ backgroundImage: "url('/bg-left.png')" }}
           />
-        </div>
+        </div> */}
 
-        <div className="w-[800px] h-full flex flex-col">
+        <div className="w-[800px] flex flex-col">
           <Header />
           <Breadcrumbs items={breadcrumbItems} separator="arrow" />
           <PageContainer>{children}</PageContainer>
           <Footer />
         </div>
 
-        <div className="flex-1 h-full relative">
+        {/* <div className="flex-1 h-full relative">
           <div
             className="absolute right-0 w-[300px] h-full bg-right bg-no-repeat bg-contain"
             style={{ backgroundImage: "url('/bg-right.png')" }}
           />
-        </div>
+        </div> */}
       </div>
     </>
   )

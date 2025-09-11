@@ -14,6 +14,7 @@ type EntityHeaderData = {
   links: {
     label: string
     href: string
+    newTab?: boolean;
   }[]
 }
 
@@ -23,8 +24,9 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
     imageSrc: "/entities/secot/logo-secot-horizontal.png",
     color: "red-600",
     links: [
-      { label: "Projetos", href: "/projects" },
-      { label: "Sobre", href: "/about" },
+      { label: "HackoonSpace", href: "/hackoonspace" },
+      { label: "Maritacas", href: "/maritacas" },
+      { label: "Hanna", href: "/hanna" },
     ],
   },
   hackoonspace: {
@@ -33,7 +35,7 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
     color: "indigo-900",
     links: [
       { label: "Revistas", href: "/hackoonspace/revistas" },
-      { label: "Inscrições", href: "/hackoonspace/inscrições" },
+      { label: "Inscrições", href: "https://forms.gle/bcoDWZhCEb5PPWiw6", newTab: true },
     ],
   },
   maritacas: {
@@ -42,7 +44,7 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
     color: "green-600",
     links: [
       { label: "Jogos", href: "/maritacas/jogos" },
-      { label: "Itch.io", href: "https://maritacasgamedev.itch.io/" },
+      { label: "Itch.io", href: "https://maritacasgamedev.itch.io/", newTab: true },
     ],
   },
   hanna: {
@@ -51,13 +53,13 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
     color: "rose-900",
     links: [
       { label: "Projetos", href: "/hanna/projetos" },
-      { label: "Sobre", href: "/hanna/sobre" },
+      { label: "Sobre", href: "https://www.projetohanna.com/", newTab: true },
     ],
   },
 }
 
 export const Header = () => {
-  const entity = useEntity<EntityHeaderData>(entities)
+  const entity = useEntity<EntityHeaderData>(entities);
 
   return (
     <Navbar
@@ -76,13 +78,17 @@ export const Header = () => {
           />
         </Link>
       </NavLogo>
-      <NavItem style={twcn(`text-${entity.color} font-bold`)}>
-        <Link href="/">Home</Link>
-      </NavItem>
-      {entity.links.map((link, i) => (
-        <NavItem style={twcn(`text-${entity.color} font-bold`)} key={i}>
-          <Link href={link.href}>{link.label}</Link>
+      <Link href="/">
+        <NavItem style={twcn(`text-${entity.color} font-bold`)}>
+          Home
         </NavItem>
+      </Link>
+      {entity.links.map((link, i) => (
+        <Link key={i} href={link.href} target={link.newTab ? "_blank" : undefined}>
+          <NavItem style={twcn(`text-${entity.color} font-bold`)}>
+            {link.label}
+          </NavItem>
+        </Link>
       ))}
     </Navbar>
   )

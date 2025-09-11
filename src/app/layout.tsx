@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`flex flex-col items-center justify-content-center antialiased`}
+        className={`flex flex-col items-center justify-center antialiased`}
       >
         <EntityProvider>
           <MainWrapper>{children}</MainWrapper>

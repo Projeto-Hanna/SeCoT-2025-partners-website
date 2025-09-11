@@ -13,26 +13,29 @@ export default function Home() {
   })
 
   return (
-    <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <main className="flex row-start-2 items-center sm:items-start">
       <Image
-        src="/next.svg"
-        alt="Next.js logo"
-        width={180}
-        height={38}
+        className="h-auto w-auto"
+        src="/entities/maritacas/logo-maritacas.png"
+        alt="Logo da Maritacas"
+        width={100}
+        height={35}
         priority
       />
       <Image
-        src="/next.svg"
-        alt="Next.js logo"
-        width={180}
-        height={38}
+        className="h-auto w-auto"
+        src="/entities/hackoonspace/logo-hackoonspace.png"
+        alt="Logo do HackoonSpace"
+        width={100}
+        height={35}
         priority
       />
       <Image
-        src="/next.svg"
-        alt="Next.js logo"
-        width={180}
-        height={38}
+        className="h-auto w-auto"
+        src="/entities/hanna/logo-hanna.png"
+        alt="Logo do Projeto Hanna"
+        width={100}
+        height={35}
         priority
       />
     </main>

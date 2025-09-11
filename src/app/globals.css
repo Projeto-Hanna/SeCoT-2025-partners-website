@@ -12,6 +12,10 @@ body {
   font-family: "Times New Roman", Times, serif, Helvetica, sans-serif;
 }
 
+img {
+  display: inline;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -52,7 +56,7 @@ body {
 
 :root {
   --radius: 0.625rem;
-  --background: #000000;
+  --background: #33aff7;
   --foreground: #171717;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);

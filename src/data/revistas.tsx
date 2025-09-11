@@ -42,14 +42,34 @@ export const revistaColumns: ColumnDef<Revista>[] = [
 ]
 
 export const revistaData: Revista[] = [
-  {
+    {
     capa: "/entities/hackoonspace/covers/cover_2024.png",
-    titulo: "Revista Exemplo 1",
-    download: "https://www.hackoonspace.com/files/Revista_-_2019.pdf",
+    titulo: "Revista 2024",
+    download: "https://www.hackoonspace.com/files/Revista_-_2024.pdf",
+  },
+    {
+    capa: "/entities/hackoonspace/covers/cover_2023.png",
+    titulo: "Revista 2023",
+    download: "https://www.hackoonspace.com/files/Revista_-_2023.pdf",
+  },
+    {
+    capa: "/entities/hackoonspace/covers/cover_2022.png",
+    titulo: "Revista 2022",
+    download: "https://www.hackoonspace.com/files/Revista_-_2022.pdf",
+  },
+    {
+    capa: "/entities/hackoonspace/covers/cover_2021.png",
+    titulo: "Revista 2021",
+    download: "https://www.hackoonspace.com/files/Revista_-_2021.pdf",
   },
   {
-    capa: "/entities/hackoonspace/covers/cover_2024.png",
-    titulo: "Revista Exemplo 2",
+    capa: "/entities/hackoonspace/covers/cover_2020.png",
+    titulo: "Revista 2020",
     download: "https://www.hackoonspace.com/files/Revista_-_2020.pdf",
   },
+    {
+    capa: "/entities/hackoonspace/covers/cover_2019.png",
+    titulo: "Revista 2019",
+    download: "https://www.hackoonspace.com/files/Revista_-_2019.pdf",
+  }
 ]
