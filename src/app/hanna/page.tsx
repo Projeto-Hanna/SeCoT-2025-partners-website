@@ -1,7 +1,7 @@
 "use client"
 
 import { twcn } from "@/utils/style"
-import { Text } from "retro-react"
+import { Button, Text } from "retro-react"
 import Image from "next/image"
 
 export default function Hanna({}: { params: Promise<{ slug?: string[] }> }) {
