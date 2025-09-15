@@ -4,6 +4,7 @@ import { DataTable } from "@/components"
 import { jogosColumns, jogosData } from "@/data/jogos"
 import { twcn } from "@/utils/style"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Button, Input, Text } from "retro-react"
 
@@ -42,7 +43,7 @@ export default function Maritacas({}: {
       { bad && <Image className="z-999 absolute min-h-screen min-w-screen" src="/ads/port.jpg" alt="Bad input" height={100} width={100}></Image>}
 
       <Text sx={twcn("text-center font-bold mb-4")}>
-        Confira os jogos da Maritacas GameDev!
+        Confira os jogos da Maritacas GameDev
       </Text>
 
       <div>
@@ -53,6 +54,10 @@ export default function Maritacas({}: {
       <div className="mt-2 mb-2">
         <Button variant="primary" onClick={shuffleArray}>Misturar jogos</Button>
       </div>
+
+      <Text sx={twcn("text-center font-bold mb-4 bg-green-600 ")}>
+        <Link className="text-emerald-900 hover:underline" href="https://maritacasgamedev.itch.io/" target="_blank">Encontre mais jogos aqui!</Link>
+      </Text>
       <DataTable
         columns={jogosColumns}
         data={shuffledJogosArray.filter(jogo => !filter || jogo.nome.toLocaleLowerCase().includes(filter) )}
