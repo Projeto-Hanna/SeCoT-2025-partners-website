@@ -158,13 +158,38 @@ export const jogosData: Jogo[] = [
     download: "https://misterproject.itch.io/thaumos",
   },
   {
-        capa: "/entities/maritacas/games/haneru.png",
+    capa: "/entities/maritacas/games/haneru.png",
     nome: "Haneru",
     download: "https://maritacasgamedev.itch.io/haneru",
   },
   {
-            capa: "/entities/maritacas/games/bisao-runner.png",
+    capa: "/entities/maritacas/games/bisao-runner.png",
     nome: "Bisão Runner",
     download: "https://maritacasgamedev.itch.io/bisaorunner",
+  },
+  {
+    capa: '/entities/maritacas/games/stars-selection.png',
+    nome: 'Star\'s Selection',
+    download: 'https://marce-lima.itch.io/stars-selection',
+  },
+  {
+    capa: '/entities/maritacas/games/overworked.png',
+    nome: 'Overworked',
+    download: 'https://leonidas022.itch.io/overworked',
+  },
+  {
+    capa: '/entities/maritacas/games/baridead.png',
+    nome: 'BariDead',
+    download: 'https://maritacasgamedev.itch.io/baridead',
+  },
+  {
+    capa: '/entities/maritacas/games/brigagum.png',
+    nome: 'Brigagum',
+    download: 'https://maritacasgamedev.itch.io/brigagum-gmtk',
+  },
+  {
+    capa: '/entities/maritacas/games/dog-walk.png',
+    nome: 'Dog Walk',
+    download: 'https://maritacasgamedev.itch.io/dog-walk',
   }
 ];

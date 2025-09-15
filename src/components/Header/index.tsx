@@ -26,7 +26,7 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
     links: [
       { label: "HackoonSpace", href: "/hackoonspace" },
       { label: "Maritacas", href: "/maritacas" },
-      { label: "Hanna", href: "https://linktr.ee/projeto_hanna" },
+      { label: "Hanna", href: "/hanna" },
     ],
   },
   hackoonspace: {
@@ -48,11 +48,11 @@ const entities: Record<EntitiesEnum, EntityHeaderData> = {
     ],
   },
   hanna: {
-    href: "https://linktr.ee/projeto_hanna",
+    href: "/hanna",
     imageSrc: "/entities/hanna/logo-hanna.png",
     color: "rose-900",
     links: [
-      { label: "Links", href: "https://linktr.ee/projeto_hanna" },
+      { label: "Links", href: "/hanna" },
       { label: "Sobre", href: "https://www.projetohanna.com/", newTab: true },
     ],
   },
