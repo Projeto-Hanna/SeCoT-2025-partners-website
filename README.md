@@ -1,15 +1,21 @@
 ## Site SeCoT 2025
 
-Para rodar localmente (script de dev):
+### Instalação
+Este projeto usa [yarn](https://yarnpkg.com/) como principal gerenciador de pacotes.
+
+Para instalar as dependências, use:
+```
+yarn install
+````
+
+### Execução
+Para rodar localmente (script de ambiente de desenvolvimento):
 
 ```bash 
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+
+### Hospedagem
+Este projeto está sendo hospedado na Vercel.
