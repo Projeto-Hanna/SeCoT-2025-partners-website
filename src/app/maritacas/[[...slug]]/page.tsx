@@ -34,8 +34,20 @@ export default function Maritacas({}: {
     setShuffledJogosArray(newShuffledJogosArray);
   };
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     shuffleArray();
+
+        const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -59,7 +71,7 @@ export default function Maritacas({}: {
         <Link className="text-emerald-900 hover:underline" href="https://maritacasgamedev.itch.io/" target="_blank">Encontre mais jogos aqui!</Link>
       </Text>
       <DataTable
-        columns={jogosColumns}
+        columns={jogosColumns.filter((column: any) => windowWidth > 800 || (windowWidth < 800 && ['nome', 'download'].includes(column.accessorKey)))}
         data={shuffledJogosArray.filter(jogo => !filter || jogo.nome.toLocaleLowerCase().includes(filter) )}
       />
     </main>

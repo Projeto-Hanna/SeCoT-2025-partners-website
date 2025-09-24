@@ -4,7 +4,7 @@ import { twcn } from "@/utils/style"
 import { Button, Input, Text } from "retro-react"
 import Image from "next/image"
 import { projetosColumns, projetosData } from "@/data/projetos"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { DataTable } from "@/components"
 
 export default function Hanna({}: { params: Promise<{ slug?: string[] }> }) {
@@ -24,6 +24,20 @@ export default function Hanna({}: { params: Promise<{ slug?: string[] }> }) {
         setFilter(undefined);
       }
     };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <main>
@@ -54,7 +68,7 @@ export default function Hanna({}: { params: Promise<{ slug?: string[] }> }) {
           </div>
 
           <DataTable
-            columns={projetosColumns}
+            columns={projetosColumns.filter((column: any) => windowWidth > 800 || (windowWidth < 800 && ['nome', 'link'].includes(column.accessorKey)))}
             data={projetosData.filter(projeto => !filter || projeto.nome.toLocaleLowerCase().includes(filter) )}
           />
         </>

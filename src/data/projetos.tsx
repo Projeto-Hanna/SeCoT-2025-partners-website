@@ -9,7 +9,7 @@ enum ProjetoEnum {
   BOT = 'BOT',
 }
 
-type Projeto = {
+export type Projeto = {
   capa: string
   tipo: ProjetoEnum,
   nome: string
@@ -97,7 +97,7 @@ export const projetosData: Projeto[] = [
     {
     capa: '/entities/hanna/projects/secot.png',
     tipo: ProjetoEnum.SITE,
-    nome: 'Site em parceria com entidades (SeCoT 2025)',
+    nome: 'Site das entidades (SeCoT 2025)',
     link: '/',
   }
 ];
